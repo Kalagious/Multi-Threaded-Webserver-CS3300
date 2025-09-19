@@ -126,3 +126,35 @@ std::string WebServer::getCookie(std::string request, std::string cookieName) {
 	}
 	return "";
 }
+
+std::string WebServer::urlDecode(std::string input) {
+	std::string output;
+	size_t length = input.length();
+
+	for (size_t i = 0; i < length; ++i) {
+		if (input[i] == '%' && i + 2 < length) {
+			std::string hex = input.substr(i + 1, 2);
+			try {
+				char decodedChar = static_cast<char>(std::stoi(hex, nullptr, 16));
+				output += decodedChar;
+				i += 2;
+			}
+			catch (const std::invalid_argument&) {
+				// Not a valid hex number; treat '%' as a literal character
+				output += '%';
+			}
+			catch (const std::out_of_range&) {
+				// Hex value is out of char range; treat '%' as a literal character
+				output += '%';
+			}
+		}
+		else if (input[i] == '+') {
+			output += ' ';
+		}
+		else {
+			output += input[i];
+		}
+	}
+
+	return output;
+}

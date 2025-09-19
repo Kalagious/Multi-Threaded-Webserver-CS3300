@@ -105,7 +105,7 @@ std::string WebServer::messagesPost(std::string data, User* user)
     std::regex messageRegex("message=([^&]*)");
     std::smatch match;
     if (std::regex_search(data, match, messageRegex)) {
-        std::string messageContent = match[1];
+        std::string messageContent = urlDecode(match[1]);
         sendMessage(user, messageContent);
         return generate301Redirect("/");
     } else
