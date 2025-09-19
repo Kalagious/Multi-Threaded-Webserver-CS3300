@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Webserver.cpp">
+      <Filter>Webserver Class</Filter>
+    </ClCompile>
+    <ClCompile Include="WebCode.cpp">
+      <Filter>Webserver Class</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Webserver Class\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
+      <Filter>Webserver Class\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="WebPages.cpp">
+      <Filter>Webserver Class</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Webserver Class">
+      <UniqueIdentifier>{195fd886-2a59-4258-afc9-1fad93549e7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Webserver Class\Application">
+      <UniqueIdentifier>{6786fab2-b1b6-42ab-aaab-d1c99b0eadd2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WebServer.h">
+      <Filter>Webserver Class</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Webserver Class\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Webserver Class\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="sha512.hh">
+      <Filter>Webserver Class\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="UUIDGenerate.hh">
+      <Filter>Webserver Class\Application</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
